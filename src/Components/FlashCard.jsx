@@ -12,9 +12,7 @@ const cardRef = useRef()
        onClick={()=>{
         toggleAnswer(!!!showAnswer)
         toggleQuestion(!!!showQuestion)
-    var cardStyle=  (cardRef.current.style.height !== '10rem') 
-    ? cardRef.current.style.height = '10rem'
-     : cardRef.current.style.height = '5rem'
+    
         
         console.log('showAnswer', showAnswer)
         console.log('showQuestion', showQuestion)
