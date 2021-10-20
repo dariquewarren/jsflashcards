@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 import QuizPage from './Components/QuizPage'
+  
 const jsQuiz =[
 {q: 'inside which element do we put javascript?',
 a: '<script/>'},

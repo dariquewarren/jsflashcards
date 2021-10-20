@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import FlashCard from './FlashCard';
 import Button from 'react-bootstrap/Button'
-import ListGroup from 'react-bootstrap/ListGroup'
-import ListGroupItem from 'react-bootstrap/ListGroupItem'
-
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+import Card from 'react-bootstrap/Card'
 
 const QuizPage = (props)=> {
 const [quizData, changeQuizData] = useState(props.quiz)
@@ -42,13 +42,18 @@ changeQuizData(shuffledQuiz)
             (showAll) ?
             quizData.map((m)=>{
                 return(
-                   
-        <div style={{display:'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}} key={quizData.indexOf(m)+1} >
-        <p>{m.q}</p>
-            <p>{m.a}</p>
-        </div>
-        
-                 
+
+                    <div key={quizData.indexOf(m)+1}>
+                    
+                   <Card style={{border:'2px solid black', maxWidth: '30rem', minWidth:'10'}}>
+                   <Col>
+      <Card.Title  > {quizData.indexOf(m)+1}</Card.Title>
+      <Card.Title style={{backgroundColor: 'grey'}}>Q: {m.q}</Card.Title>
+      <Card.Title style={{backgroundColor: 'yellow'}}>A: {m.a}</Card.Title> 
+       </Col>
+
+      </Card>
+      </div>    
                 )
             })
             : <p>all qs and as</p>
