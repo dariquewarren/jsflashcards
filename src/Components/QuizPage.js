@@ -37,7 +37,17 @@ changeQuizData(shuffledQuiz)
         onClick={()=>shuffleQuiz(quizData)}
         >Shuffle cards</Button>
         <button onClick={()=> console.log('quizData',quizData)} > log quiz data</button>
-      
+      <div
+      style={{
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexWrap: 'wrap',
+        width: '100%',
+        border: '5px dashed black'
+    }}
+      >
         {
             (showAll) ?
             quizData.map((m)=>{
@@ -56,10 +66,10 @@ changeQuizData(shuffledQuiz)
       </div>    
                 )
             })
-            : <p>all qs and as</p>
+            : <p></p>
         }
       
-      
+        </div>
         <div style={{
             display: 'flex',
             flexDirection: 'row',
