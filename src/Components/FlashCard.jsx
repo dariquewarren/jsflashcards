@@ -7,8 +7,8 @@ const [showQuestion, toggleQuestion] = useState(true)
 const cardRef = useRef()
 
     return (
-        <div >
-       <Card ref={cardRef} as='button' style={{width: '20rem', height: '15rem'}} bg='secondary'
+       <Card ref={cardRef} bg='dark'  as='button' 
+       style={{alignItems: 'center', justifyContent: 'center', color:'white', minWidth:'15rem', maxWidth: '20rem', width: 'auto', minHeight:'15rem', maxHeight:'20rem', height: 'auto'}} 
        onClick={()=>{
         toggleAnswer(!!!showAnswer)
         toggleQuestion(!!!showQuestion)
@@ -21,28 +21,30 @@ const cardRef = useRef()
     }
         
     }>
-       <Card.Header>FlashCard Question {props.questionNumber}</Card.Header>
+       <Card.Header> 
+       <h3>{(showAnswer) ? 'Answer':'Question'} {props.questionNumber}</h3>
+       </Card.Header>
        {(showQuestion) 
         ? 
-        <Card.Footer style={{backgroundColor: 'yellow'}}>
-       {props.question}
-       </Card.Footer>
+        <Card.Footer style={{border: '2px solid yellow'}}>
+<h4>
+{props.question}
+</h4>       </Card.Footer>
         :<p></p>}
        
 
 {
     (showAnswer) ?
-    <Card.Footer style={{backgroundColor: 'green', color:'white'}}>
-    {props.answer}
+    <Card.Footer style={{border: '2px solid green'}} >
+    <h2>    {props.answer}
+    </h2>
     </Card.Footer> : <p></p>
 }
 
        
-
        </Card>
         
             
-            
-        </div>
+        
     )
 }
