@@ -22,7 +22,7 @@ const cardRef = useRef()
         
     }>
        <Card.Header> 
-       <h3>{(showAnswer) ? 'Answer':'Question'} {props.questionNumber}</h3>
+       <h3>{(showAnswer) ? 'Answer':'Question'} </h3>
        </Card.Header>
        {(showQuestion) 
         ? 
